@@ -1,0 +1,53 @@
+.App {
+  background-color: white;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.itemsCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+h1, h3 {
+  margin: 0px;
+}
+
+#resource:hover .requirestoolTip {
+  display: block;
+}
+
+.requirestoolTip {
+  display: none;
+}
+
+h3 {
+  width: 200px;
+}
+
+#resource {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  border-radius: 50px;
+  padding: 15px;
+  height: 250px;
+  width: 250px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.resourcesCont {
+  display: flex;
+  gap: 25px;
+}
+
+.buildingsCont {
+  display: flex;
+  gap: 25px;
+}
