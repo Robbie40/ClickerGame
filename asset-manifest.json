@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/robbie40.github.io/static/css/main.bbc7e09b.css",
+    "main.js": "/robbie40.github.io/static/js/main.ba759b47.js",
+    "static/js/488.3277d06c.chunk.js": "/robbie40.github.io/static/js/488.3277d06c.chunk.js",
+    "index.html": "/robbie40.github.io/index.html",
+    "main.bbc7e09b.css.map": "/robbie40.github.io/static/css/main.bbc7e09b.css.map",
+    "main.ba759b47.js.map": "/robbie40.github.io/static/js/main.ba759b47.js.map",
+    "488.3277d06c.chunk.js.map": "/robbie40.github.io/static/js/488.3277d06c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bbc7e09b.css",
+    "static/js/main.ba759b47.js"
+  ]
+}
