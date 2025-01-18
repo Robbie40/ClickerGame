@@ -124,15 +124,15 @@ function App() {
   return (
     <div className="App">
       <div className='itemsCont'>
-        <h1>Resources</h1>
+        <h1 className='header'>Resources</h1>
         <div className='items'>
           {resourceElements}
         </div>
-        <h1>Buildings</h1>
+        <h1 className='header'>Buildings</h1>
         <div className='items'>
           {buildingElements}
         </div>
-        <h1>Units</h1>
+        <h1 className='header'>Units</h1>
         <div className='items'>
           {unitElements}
         </div>
