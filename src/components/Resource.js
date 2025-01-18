@@ -32,7 +32,10 @@ export default function Resource(props) {
         }
 
         if (props.name === 'Sawmill' && props.numOfResource >= 1) {
-            const timer = 5000 - (props.numOfResource * 10);
+            var timer = 5000 - (props.numOfResource * 100);
+            if (timer <= 1000) {
+                timer = 1000 - (props.numOfResource * 20);
+            }
             const interval = setInterval(() => {
                 props.itemTimer('Wood');
             }, timer)
@@ -40,7 +43,10 @@ export default function Resource(props) {
         }
         //Stone becomes available once a stone mine has been built
         if (props.name === 'Stone Mine' && props.numOfResource >= 1) {
-            const timer = 5000 - (props.numOfResource * 10);
+            var timer = 5000 - (props.numOfResource * 100);
+            if (timer <= 1000) {
+                timer = 1000 - (props.numOfResource * 20);
+            }
             const interval = setInterval(() => {
                 props.itemTimer('Stone');
             }, timer)
@@ -48,7 +54,10 @@ export default function Resource(props) {
         }
 
         if (props.name === 'Field' && props.numOfResource >= 1) {
-            const timer = 5000 - (props.numOfResource * 10);
+            var timer = 5000 - (props.numOfResource * 100);
+            if (timer <= 1000) {
+                timer = 1000 - (props.numOfResource * 20);
+            }
             const interval = setInterval(() => {
                 props.itemTimer('Food');
             }, timer)

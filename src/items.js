@@ -114,4 +114,61 @@ export default [
         hasRequiredFood: false,
         hasRequiredPopulation: false
     },
+    //Units
+    {
+        name: 'Knight',
+        on: false,
+        numOfResource: 0,
+        requirements: '50 Food',
+        requiredWood: 0,
+        requiredStone: 0,
+        requiredFood: 50,
+        requiredPopulation: 1,
+        hasRequiredWood: false,
+        hasRequiredStone: false,
+        hasRequiredFood: false,
+        hasRequiredPopulation: false
+    },
+    {
+        name: 'Archer',
+        on: false,
+        numOfResource: 0,
+        requirements: '20 Food',
+        requiredWood: 0,
+        requiredStone: 0,
+        requiredFood: 20,
+        requiredPopulation: 1,
+        hasRequiredWood: false,
+        hasRequiredStone: false,
+        hasRequiredFood: false,
+        hasRequiredPopulation: false
+    },
+    {
+        name: 'Cavalry',
+        on: false,
+        numOfResource: 0,
+        requirements: '35 Food',
+        requiredWood: 0,
+        requiredStone: 0,
+        requiredFood: 35,
+        requiredPopulation: 1,
+        hasRequiredWood: false,
+        hasRequiredStone: false,
+        hasRequiredFood: false,
+        hasRequiredPopulation: false
+    },
+    {
+        name: 'Pikeman',
+        on: false,
+        numOfResource: 0,
+        requirements: '25 Food',
+        requiredWood: 0,
+        requiredStone: 0,
+        requiredFood: 25,
+        requiredPopulation: 1,
+        hasRequiredWood: false,
+        hasRequiredStone: false,
+        hasRequiredFood: false,
+        hasRequiredPopulation: false
+    },
 ]

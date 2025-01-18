@@ -42,12 +42,7 @@ h3 {
   margin-bottom: 50px;
 }
 
-.resourcesCont {
-  display: flex;
-  gap: 25px;
-}
-
-.buildingsCont {
+.items {
   display: flex;
   gap: 25px;
 }

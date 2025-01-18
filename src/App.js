@@ -105,7 +105,6 @@ function App() {
     <Resource 
       name={itemInfo.name} 
       on={itemInfo.on}
-      logoSource={itemInfo.logoSource} 
       numOfResource={itemInfo.numOfResource}
       requiredWood={itemInfo.requiredWood}
       requiredStone={itemInfo.requiredStone}
@@ -118,19 +117,24 @@ function App() {
       checkRequirements={checkRequirements}/>
   ))
 
-  const resourceElements = itemElements.slice(0, 4)  
+  const resourceElements = itemElements.slice(0, 4);  
   const buildingElements = itemElements.slice(4, 8);
+  const unitElements = itemElements.slice(8,12);
 
   return (
     <div className="App">
       <div className='itemsCont'>
         <h1>Resources</h1>
-        <div className='resourcesCont'>
+        <div className='items'>
           {resourceElements}
         </div>
         <h1>Buildings</h1>
-        <div className='buildingsCont'>
+        <div className='items'>
           {buildingElements}
+        </div>
+        <h1>Units</h1>
+        <div className='items'>
+          {unitElements}
         </div>
       </div>
     </div>
