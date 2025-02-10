@@ -7,6 +7,8 @@ function App() {
 
   const [itemsInfo, setItemsInfo] = React.useState(items);
 
+  var styles;
+
   function toggle(name, numOfResource) {
     setItemsInfo(prevItems => {
         return prevItems.map((item) => {
@@ -45,19 +47,147 @@ function App() {
   }
 
   function checkRequirements() {
+
+    itemsInfo.forEach(function (arrayItem) {
+      if (arrayItem.name === 'Dark Age') {
+        if (arrayItem.numOfResource >= 1) {
+          setItemsInfo(prevItems => {
+            return prevItems.map((item) => {
+              if (item.requiredAge === 'Dark Age') {
+                if (item.hasRequiredWood === true && item.hasRequiredStone === true && item.hasRequiredFood === true && item.hasRequiredPopulation === true) {
+                  return {...item, on: item.on = true};
+                }
+                else {
+                  return {...item, on: item.on = false};
+                }
+              }
+              else {
+                return item;
+              }
+            })
+          })
+        }
+        else {
+          setItemsInfo(prevItems => {
+            return prevItems.map((item) => {
+              if (item.requiredAge === 'Dark Age') {
+                return {...item, on: item.on = false};
+              }
+              else {
+                return item;
+              }
+            })
+          })
+        }
+      }
+      else if (arrayItem.name === 'Feudal Age') {
+        if (arrayItem.numOfResource >= 1) {
+          setItemsInfo(prevItems => {
+            return prevItems.map((item) => {
+              if (item.requiredAge === 'Feudal Age') {
+                if (item.hasRequiredWood === true && item.hasRequiredStone === true && item.hasRequiredFood === true && item.hasRequiredPopulation === true) {
+                  return {...item, on: item.on = true};
+                }
+                else {
+                  return {...item, on: item.on = false};
+                }
+              }
+              else {
+                return item;
+              }
+            })
+          })
+        }
+        else {
+          setItemsInfo(prevItems => {
+            return prevItems.map((item) => {
+              if (item.requiredAge === 'Feudal Age') {
+                return {...item, on: item.on = false};
+              }
+              else {
+                return item;
+              }
+            })
+          })
+        }
+      }
+      else if (arrayItem.name === 'Castle Age') {
+        if (arrayItem.numOfResource >= 1) {
+          setItemsInfo(prevItems => {
+            return prevItems.map((item) => {
+              if (item.requiredAge === 'Castle Age') {
+                if (item.hasRequiredWood === true && item.hasRequiredStone === true && item.hasRequiredFood === true && item.hasRequiredPopulation === true) {
+                  return {...item, on: item.on = true};
+                }
+                else {
+                  return {...item, on: item.on = false};
+                }
+              }
+              else {
+                return item;
+              }
+            })
+          })
+        }
+        else {
+          setItemsInfo(prevItems => {
+            return prevItems.map((item) => {
+              if (item.requiredAge === 'Castle Age') {
+                return {...item, on: item.on = false};
+              }
+              else {
+                return item;
+              }
+            })
+          })
+        }
+      }
+      else if (arrayItem.name === 'Imperial Age') {
+        if (arrayItem.numOfResource >= 1) {
+          setItemsInfo(prevItems => {
+            return prevItems.map((item) => {
+              if (item.requiredAge === 'Imperial Age') {
+                if (item.hasRequiredWood === true && item.hasRequiredStone === true && item.hasRequiredFood === true && item.hasRequiredPopulation === true) {
+                  return {...item, on: item.on = true};
+                }
+                else {
+                  return {...item, on: item.on = false};
+                }
+              }
+              else {
+                return item;
+              }
+            })
+          })
+        }
+        else {
+          setItemsInfo(prevItems => {
+            return prevItems.map((item) => {
+              if (item.requiredAge === 'Imperial Age') {
+                return {...item, on: item.on = false};
+              }
+              else {
+                return item;
+              }
+            })
+          })
+        }
+      }
+    })
+
     setItemsInfo(prevItems => {
       return prevItems.map((item) => {
-        if (item.hasRequiredWood === true && item.hasRequiredStone === true && item.hasRequiredFood === true && item.hasRequiredPopulation === true) {
+        if ((item.name === 'Dark Age' || item.name === 'Feudal Age' || item.name === 'Castle Age' || item.name === 'Imperial Age') && item.numOfResource >= 1) {
           return {...item, on: item.on = true};
         }
         else {
-          return {...item, on: item.on = false};
+          return item;
         }
       })
     })
   }
 
-  function handleClick(name, on, requiredWood, requiredStone, requiredFood, requiredPopulation) {
+  function handleClick(name, on, numOfResource, requiredWood, requiredStone, requiredFood, requiredPopulation) {
     setItemsInfo(prevItems => {
       return prevItems.map((item) => {
         return item.name === name && item.on === true ? {...item, numOfResource: item.numOfResource + 1} : item
@@ -66,7 +196,10 @@ function App() {
 
     setItemsInfo(prevItems => {
         return prevItems.map((item) => {
-          if (item.name === 'Wood' && on === true) {
+          if ((name === 'Feudal Age' || name === 'Castle Age' || name === 'Imperial Age') && numOfResource >=1) {
+            return item;
+          }
+          else if (item.name === 'Wood' && on === true) {
             return {...item, numOfResource: item.numOfResource - requiredWood};
           }
           else if (item.name === 'Stone' && on === true) {
@@ -83,13 +216,16 @@ function App() {
           }
         })
       })
-  } 
+  }
 
   function itemTimer(name) {
     setItemsInfo(prevItems => {
       return prevItems.map((item) => {
-        if (name === 'Population' && item.name === 'Population') {
+        if (name === 'populationPlusFive' && item.name === 'Population') {
           return {...item, numOfResource: item.numOfResource + 5};
+        }
+        else if (name === 'populationPlusTen' && item.name === 'Population') {
+          return {...item, numOfResource: item.numOfResource + 10};
         }
         else if (item.name === name) {
           return {...item, numOfResource: item.numOfResource + 1};
@@ -110,6 +246,7 @@ function App() {
       requiredStone={itemInfo.requiredStone}
       requiredFood={itemInfo.requiredFood}
       requiredPopulation={itemInfo.requiredPopulation}
+      requiredAge={itemInfo.requiredAge}
       requirements={itemInfo.requirements}
       handleClick={handleClick} 
       toggle={toggle}
@@ -117,20 +254,28 @@ function App() {
       checkRequirements={checkRequirements}/>
   ))
 
-  const resourceElements = itemElements.slice(0, 4);  
-  const buildingElements = itemElements.slice(4, 8);
-  const unitElements = itemElements.slice(8,12);
+  const ageElements = itemElements.slice(0, 4)
+  const resourceElements = itemElements.slice(4, 8);  
+  const buildingElements1 = itemElements.slice(8, 12);
+  const buildingElements2 = itemElements.slice(12, 16);
+  const unitElements = itemElements.slice(16, 20);
 
   return (
     <div className="App">
       <div className='itemsCont'>
+        <div style={styles} className='items'>
+          {ageElements}
+        </div>
         <h1 className='header'>Resources</h1>
         <div className='items'>
           {resourceElements}
         </div>
         <h1 className='header'>Buildings</h1>
         <div className='items'>
-          {buildingElements}
+          {buildingElements1}
+        </div>
+        <div className='items' id='buildingsLineTwo'>
+          {buildingElements2}
         </div>
         <h1 className='header'>Units</h1>
         <div className='items'>
